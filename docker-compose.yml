@@ -13,8 +13,6 @@ services:
       interval: 30s
       timeout: 10s
       retries: 3
-    # volumes:
-    #   - ollama:/root/.ollama
     ports:
       - '11434:11434'
     networks:
@@ -35,10 +33,6 @@ services:
         condition: service_healthy
     networks:
       - ai-network
-
-# volumes:
-#   ollama:
-#     name: ollama
 
 networks:
   ai-network:
