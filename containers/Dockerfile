@@ -13,9 +13,4 @@ RUN curl -fsSL https://ollama.com/install.sh | sh
 # Expose Ollama API port
 EXPOSE 11434
 
-# Add health check
-HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
-    CMD curl -f http://localhost:11434/api/health || exit 1
-
-
 CMD ["ollama", "serve"]
